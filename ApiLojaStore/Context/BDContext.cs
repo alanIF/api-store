@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ApiLojaStore.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApiLojaStore.Context
 {
@@ -12,7 +13,13 @@ namespace ApiLojaStore.Context
             optionsBuilder.UseSqlServer(connectionString);
         }
 
+        // adiciona tabela ao banco de dados, a partir do modelo criado
+        public DbSet<User> Users { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Entrada> Entradas { get; set; }
 
-       
+        public DbSet<Venda> Vendas { get; set; }
+
+
     }
 }
