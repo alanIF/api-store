@@ -27,6 +27,17 @@ namespace ApiLojaStore.Controllers
 
             return Ok(vendas);
         }
+        [HttpGet("view")]
+        public async Task<IActionResult> View(int id)
+        {
+            var venda = await _context.Vendas.FindAsync(id);
+            if (venda is null)
+            {
+                return NotFound();
+            }
+
+            return Ok(venda);
+        }
         [HttpPost("Create")]
         public async Task<IActionResult> Create([Bind("Id,data_venda, qtd, observacao, idComprador, idProduto")] Venda venda)
         {

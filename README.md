@@ -18,9 +18,17 @@
         - /update/{id} - atualiza as informações de uma venda que possui id.
         - /delete/{id} - excluir a venda de id.
         - /view/{id} - exibir as informações da venda.
+    * /user - usuarios 
+        - /create - cria um novo usuario.
+        - /update/{id} - atualiza as informações de um usuario que possui id.
+        - /delete/{id} - excluir o usuario de id.
+        - /view/{id} - exibir as informações do usuario.
+    * /Auth
+        - /login - login na api.
+        - /logout - logout na api. 
 # Tecnologias  
     - .NET
     - MVC
     - API RestFull
-    - Autenticação JWT
+    - Autenticação 
     - SQL Server

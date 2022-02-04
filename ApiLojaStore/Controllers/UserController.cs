@@ -26,6 +26,17 @@ namespace ApiLojaStore.Controllers
 
             return Ok(users);
         }
+        [HttpGet("view")]
+        public async Task<IActionResult> View(int id)
+        {
+            var user = await _context.Users.FindAsync(id);
+            if (user is null)
+            {
+                return NotFound();
+            }
+
+            return Ok(user);
+        }
         [HttpPost("Create")]
         public async Task<IActionResult> Create([Bind("Name, Email, Password")] User user)
         {
