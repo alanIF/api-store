@@ -5,6 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ApiLojaStore.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
+
     public class ProdutoController : Controller
     {
         private readonly BDContext _context;
