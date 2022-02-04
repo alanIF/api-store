@@ -13,6 +13,8 @@ namespace ApiLojaStore.Model
 
         [ForeignKey("User")]
         public int idUser { get; set; }
+        public int qtd { get; set; }
+
 
         [ForeignKey("Produto")]
         public int idProduto { get; set; }

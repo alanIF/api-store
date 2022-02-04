@@ -28,7 +28,7 @@ namespace ApiLojaStore.Controllers
             return Ok(entradas);
         }
         [HttpPost("Create")]
-        public async Task<IActionResult> Create([Bind("Id,titulo,data_entrada, data_validade,data_fabricacao, observacao, idUser, idProduto")] Entrada entrada)
+        public async Task<IActionResult> Create([Bind("Id,titulo,data_entrada,qtd, data_validade,data_fabricacao, observacao, idUser, idProduto")] Entrada entrada)
         {
             _context.Add(entrada);
             await _context.SaveChangesAsync();
@@ -37,7 +37,7 @@ namespace ApiLojaStore.Controllers
             return Ok(entrada);
         }
         [HttpPatch("Update")]
-        public async Task<IActionResult> Update(int id, [Bind("Id,titulo,data_entrada, data_validade,data_fabricacao, observacao, idUser, idProduto")] Entrada entrada)
+        public async Task<IActionResult> Update(int id, [Bind("Id,titulo,data_entrada, qtd, data_validade,data_fabricacao, observacao, idUser, idProduto")] Entrada entrada)
         {
             if (id != entrada.Id)
             {
